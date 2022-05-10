@@ -20,8 +20,33 @@
 </head>
 <body>
     <script>
+	function shuffle(array) {
+  		let currentIndex = array.length,  randomIndex;
+
+		// While there remain elements to shuffle.
+  		while (currentIndex != 0) {
+
+			// Pick a remaining element.
+			randomIndex = Math.floor(Math.random() * currentIndex);
+			currentIndex--;
+
+			// And swap it with the current element.
+			[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+		}
+
+		return array;
+	}
+    </script>
+    <script>	
         $(document).ready(function(){
-            $("img").hide();
+	    var arrayImages = ["cachorro.png", "coelho.png", "coruja.png", "guaxinim.png", "tigre.png", "urso.png",
+		"cachorro.png", "coelho.png", "coruja.png", "guaxinim.png", "tigre.png", "urso.png"];
+	    shuffle(arrayImages);
+	    
+	    $(".card-body").each(function(index){
+		$(this).append(" <img src=\"img/"+arrayImages[index]+"\" class=\"img-fluid\" alt=\"\"> ");
+	    });
+      
             $(".card.pergunta").click(function(){
                 $(this).children(".card-body").children("img").slideToggle(750);
             });
@@ -34,7 +59,6 @@
                 <div>
                     <div class="card pergunta" >
                         <div class="card-body">
-                            <img src="/img/cachorro.png" class="img-fluid" alt="">
                         </div>                      
                     </div>
                 </div>
@@ -44,7 +68,6 @@
                 <div>
                     <div class="card pergunta">
                         <div class="card-body">
-                            <img src="/img/coelho.png" class="img-fluid" alt="">
                         </div>                      
                     </div>
                 </div>
@@ -54,7 +77,6 @@
                 <div>
                     <div class="card pergunta" style="width: auto;">
                         <div class="card-body">
-                            <img src="/img/coruja.png" class="img-fluid" alt="">
                         </div>                      
                     </div>
                 </div>
@@ -64,49 +86,6 @@
                 <div>
                     <div class="card pergunta" style="width: auto;">
                         <div class="card-body">
-                            <img src="/img/cachorro.png" class="img-fluid" alt="">
-                        </div>                      
-                    </div>
-                </div>
-                <br>           
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-3">
-                <div>
-                    <div class="card pergunta" style="width: auto;">
-                        <div class="card-body">
-                            <img src="/img/guaxinim.png" class="img-fluid" alt="">
-                        </div>                      
-                    </div>
-                </div>
-                <br>           
-            </div>
-            <div class="col-lg-3">
-                <div>
-                    <div class="card pergunta" style="width: auto;">
-                        <div class="card-body">
-                            <img src="/img/tigre.png" class="img-fluid" alt="">
-                        </div>                      
-                    </div>
-                </div>
-                <br>           
-            </div>
-            <div class="col-lg-3">
-                <div>
-                    <div class="card pergunta" style="width: auto;">
-                        <div class="card-body">
-                            <img src="/img/guaxinim.png" class="img-fluid" alt="">
-                        </div>                      
-                    </div>
-                </div>
-                <br>           
-            </div>
-            <div class="col-lg-3">
-                <div>
-                    <div class="card pergunta" style="width: auto;">
-                        <div class="card-body">
-                            <img src="/img/urso.png" class="img-fluid" alt="">
                         </div>                      
                     </div>
                 </div>
@@ -118,7 +97,6 @@
                 <div>
                     <div class="card pergunta" style="width: auto;">
                         <div class="card-body">
-                            <img src="/img/urso.png" class="img-fluid" alt="">
                         </div>                      
                     </div>
                 </div>
@@ -128,7 +106,6 @@
                 <div>
                     <div class="card pergunta" style="width: auto;">
                         <div class="card-body">
-                            <img src="/img/coelho.png" class="img-fluid" alt="">
                         </div>                      
                     </div>
                 </div>
@@ -138,7 +115,6 @@
                 <div>
                     <div class="card pergunta" style="width: auto;">
                         <div class="card-body">
-                            <img src="/img/coruja.png" class="img-fluid" alt="">
                         </div>                      
                     </div>
                 </div>
@@ -148,7 +124,44 @@
                 <div>
                     <div class="card pergunta" style="width: auto;">
                         <div class="card-body">
-                            <img src="/img/tigre.png" class="img-fluid" alt="">
+                        </div>                      
+                    </div>
+                </div>
+                <br>           
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div>
+                    <div class="card pergunta" style="width: auto;">
+                        <div class="card-body">
+                        </div>                      
+                    </div>
+                </div>
+                <br>           
+            </div>
+            <div class="col-lg-3">
+                <div>
+                    <div class="card pergunta" style="width: auto;">
+                        <div class="card-body">
+                        </div>                      
+                    </div>
+                </div>
+                <br>           
+            </div>
+            <div class="col-lg-3">
+                <div>
+                    <div class="card pergunta" style="width: auto;">
+                        <div class="card-body">
+                        </div>                      
+                    </div>
+                </div>
+                <br>           
+            </div>
+            <div class="col-lg-3">
+                <div>
+                    <div class="card pergunta" style="width: auto;">
+                        <div class="card-body">
                         </div>                      
                     </div>
                 </div>
